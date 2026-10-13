@@ -10,9 +10,9 @@ window.VINO_CONFIG = {
   timezone: 'Asia/Hong_Kong', rotationSeconds: 18, refreshMinutes: 10,
   promotions: [
     {tag:'THE REFUEL RITUAL',title:'Strong coffee.\nStronger you.',text:'Protein coffee, crafted for your post-workout moment.',cta:'DISCOVER AT RECEPTION',image:'assets/protein-coffee.png'},
-    {tag:'VINO STANDARD. VINO RESULTS.',title:'Get better\ntoday.',text:'Asian evidence-based body transformation through personal training, nutrition coaching and community.',cta:'BOOK A 1-ON-1 CONSULTATION',image:''},
-    {tag:'SUSTAINABLE TRAINING. SMART NUTRITION.',title:'Built for\nreal life.',text:'A practical approach for busy Hong Kong professionals, with coaching that fits your goals and routine.',cta:'SPEAK TO A VINO COACH',image:''},
-    {tag:'NUTRITION COACHING',title:'Eat well.\nTrain smart.',text:'Explore practical, high-protein choices and build better nutrition habits for everyday life.',cta:'ASK ABOUT NUTRITION COACHING',image:''},
+    {tag:'VINO STANDARD. VINO RESULTS.',title:'Get better\ntoday.',text:'Angela’s 70-week journey: lasting change built with the right coaching, consistency and support.',cta:'BOOK A 1-ON-1 CONSULTATION',image:'assets/vino-angela-70-week.jpg',imageFit:'poster'},
+    {tag:'SUSTAINABLE TRAINING. SMART NUTRITION.',title:'Build strength.\nGet better.',text:'Evidence-based training helps you build muscle, move with confidence and keep progressing.',cta:'SPEAK TO A VINO COACH',image:'assets/vino-strength-training.jpg',imageFit:'poster'},
+    {tag:'NUTRITION COACHING',title:'Eat well.\nTrain smart.',text:'Smart choices are practical. VINO’s Hong Kong guide makes protein-forward meals easier to find.',cta:'ASK ABOUT NUTRITION COACHING',image:'assets/vino-high-protein-rice.jpg',imageFit:'poster'},
     {tag:'VINO COMMUNITY',title:'Stronger\ntogether.',text:'Find support, consistency and a community that celebrates progress at every step.',cta:'MEET THE VINO TEAM',image:''}
   ],
   feeds:[

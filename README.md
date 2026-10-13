@@ -4,13 +4,13 @@ This is the complete website package with the continuous sports configuration in
 
 ## Install
 
-1. Unzip `vino-gym-tv-promotions-v10.zip`.
+1. Unzip `vino-gym-tv-promotions-v11.zip`.
 2. Open https://github.com/al13ert/Vino-Gym and choose Add file → Upload files.
 3. Upload ALL the unzipped contents directly to the repository root, including `assets`, `data`, `scripts` and the hidden `.github/workflows` folder. Replace matching files. The `.github` folder is hidden: on a Mac press Command+Shift+. in the file picker to show it. If uploading via GitHub’s browser page, first unzip the package, then upload the files and folders from inside it directly to the repository root. Make sure `.github/workflows/refresh-market-weather.yml` is included; without it, the automatic market and weather updates will not run. Do not upload the ZIP or the containing folder.
 4. Commit changes and wait for GitHub Pages deployment.
-5. Open your TV link: https://al13ert.github.io/Vino-Gym/?v=10 .
+5. Open your TV link: https://al13ert.github.io/Vino-Gym/?v=11 .
 
-Your normal TV address remains https://al13ert.github.io/Vino-Gym/ . The v=10 address helps distinguish this update. The package is not yet on GitHub. The website URL will continue showing the currently committed version until these files are uploaded and committed.
+Your normal TV address remains https://al13ert.github.io/Vino-Gym/ . The v=11 address helps distinguish this update. The package is not yet on GitHub. The website URL will continue showing the currently committed version until these files are uploaded and committed.
 
 No channel selection is needed. The existing automatic HLS player starts muted, follows the channel schedule and retries dropped connections. VINO branding, promotions, clock, news and market settings are preserved from the deployed configuration retrieved on 13 October 2026. The package must be committed to GitHub before its changes appear on the published site.
 
@@ -43,14 +43,14 @@ The market panel now uses a taller area and larger type for the 50-stock scrolli
 
 ## VINO promotions
 
-The carousel now rotates five messages covering protein coffee, the VINO tagline, personal training, nutrition coaching and community. “Get Better Today” appears in the personal-training slide, footer strap and scrolling banner. The existing protein-coffee visual remains in rotation.
+The carousel now rotates five messages for protein coffee, client transformation, strength training, nutrition coaching and community. “Get Better Today” appears in the client-results slide, footer strap and scrolling banner. The three locally bundled Instagram visuals retain their portrait layouts at the right of each promo panel; the coffee and community slides keep the existing treatment.
 
 ## Instagram promotion direction
 
-The rotating copy follows the public VINO profile’s own positioning: “Get Better Today,” Asian evidence-based body transformation, personal training, nutrition coaching and community. It also adapts themes from VINO’s posts about Angela’s client journey, sustainable training and smart nutrition for busy Hong Kong professionals, and practical high-protein local meals. The existing protein-coffee image remains in the rotation.
+The promo mix pairs the original protein-coffee visual with three VINO Instagram images, selected to cover results, training and nutrition. Each image is stored in the package so playback does not rely on Instagram embeds or temporary image links.
 
 Profile: https://www.instagram.com/vinopt.hk/
 
 Relevant public posts reviewed: https://www.instagram.com/vinopt.hk/p/DeBdmxBk42N/ · https://www.instagram.com/vinopt.hk/p/Dd01T4RExMD/ · https://www.instagram.com/vinopt.hk/p/DeS52QOE_Hx/
 
-The profile and post captions were accessible in the signed-in browser, but the original post images have not been copied into this package. Send the specific approved images you want on the TV and I can add them as local assets, which avoids depending on Instagram embeds or expiring media links.
+Selected visuals: Angela’s VINO 70-week client progress poster (https://www.instagram.com/vinopt.hk/p/DeBdmxBk42N/); the strength and muscle-building coaching visual (https://www.instagram.com/vinopt.hk/p/DeD66zWEwzO/); and VINO’s Hong Kong high-protein restaurant guide, using its roasted duck and chicken rice example (https://www.instagram.com/vinopt.hk/p/DeS52QOE_Hx/). These VINO images are bundled locally under assets/ for reliable TV playback. The client result remains attributed to the original public VINO post; use only with the client consent/permissions VINO already has for its Instagram marketing. The TV package adds no Instagram embed or expiring CDN dependency.
