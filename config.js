@@ -1,5 +1,7 @@
 // Edit this file to change promotions, feeds and optional public JSON endpoints.
 window.VINO_CONFIG = {
+  marketMode: 'widget',
+  fifaYoutubeVideoId: '', // Only an official FIFA video that permits embedding. No guaranteed 24/7 FIFA channel.
   timezone: 'Asia/Hong_Kong', rotationSeconds: 18, refreshMinutes: 10,
   promotions: [
     {tag:'THE REFUEL RITUAL',title:'Strong coffee.\nStronger you.',text:'Protein coffee, crafted for your post-workout moment.',cta:'DISCOVER AT RECEPTION',image:'assets/protein-coffee.png'},
