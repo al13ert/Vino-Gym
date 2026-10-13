@@ -10,8 +10,10 @@ window.VINO_CONFIG = {
   timezone: 'Asia/Hong_Kong', rotationSeconds: 18, refreshMinutes: 10,
   promotions: [
     {tag:'THE REFUEL RITUAL',title:'Strong coffee.\nStronger you.',text:'Protein coffee, crafted for your post-workout moment.',cta:'DISCOVER AT RECEPTION',image:'assets/protein-coffee.png'},
-    {tag:'PERSONAL TRAINING',title:'Your goals.\nOur focus.',text:'Make your next session count. Ask our coaches about a personal training consultation.',cta:'SPEAK TO A VINO COACH',image:''},
-    {tag:'YOUR DAILY RESET',title:'Move well.\nFeel better.',text:'Take a breath. Stay hydrated. Build a routine that works for you.',cta:'WELCOME TO VINO',image:''}
+    {tag:'VINO STANDARD. VINO RESULTS.',title:'Get better\ntoday.',text:'Asian evidence-based body transformation through personal training, nutrition coaching and community.',cta:'BOOK A 1-ON-1 CONSULTATION',image:''},
+    {tag:'SUSTAINABLE TRAINING. SMART NUTRITION.',title:'Built for\nreal life.',text:'A practical approach for busy Hong Kong professionals, with coaching that fits your goals and routine.',cta:'SPEAK TO A VINO COACH',image:''},
+    {tag:'NUTRITION COACHING',title:'Eat well.\nTrain smart.',text:'Explore practical, high-protein choices and build better nutrition habits for everyday life.',cta:'ASK ABOUT NUTRITION COACHING',image:''},
+    {tag:'VINO COMMUNITY',title:'Stronger\ntogether.',text:'Find support, consistency and a community that celebrates progress at every step.',cta:'MEET THE VINO TEAM',image:''}
   ],
   feeds:[
     {name:'BBC WORLD',url:'https://feeds.bbci.co.uk/news/world/rss.xml',home:'https://www.bbc.com/news'},
@@ -20,5 +22,5 @@ window.VINO_CONFIG = {
   ],
   // Optional CORS-enabled HTTPS endpoints. Do not put secret API keys here.
   marketsEndpoint:'', sportsEndpoint:'',
-  ticker:'Welcome to VINO Personal Training     •     Ask our coaches about personal training     •     Stay hydrated between sets     •     Protein coffee promotion concept — ask our team for availability'
+  ticker:'GET BETTER TODAY     •     ASIAN EVIDENCE-BASED BODY TRANSFORMATION     •     PERSONAL TRAINING     •     NUTRITION COACHING     •     COMMUNITY     •     BOOK A 1-ON-1 CONSULTATION     •     Follow @vinopt.hk'
 };
