@@ -1,9 +1,9 @@
 // Edit this file to change promotions, feeds and optional public JSON endpoints.
 window.VINO_CONFIG = {
   marketMode: 'widget',
-  channelCount: 1, // Set 2 for side-by-side streams. RTHK currently returns 403 from our test connection.
+  channelCount: 1, // One continuous sports channel; no channel selection required.
   channels: [
-    {name:'CNA',url:'https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8'},
+    {name:'RED BULL TV · CONTINUOUS SPORTS',url:'https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8'},
     {name:'RTHK 32',url:'https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8'}
   ],
   fifaYoutubeVideoId: '',  // Only an official FIFA video that permits embedding. No guaranteed 24/7 FIFA channel.
