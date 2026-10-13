@@ -1,7 +1,12 @@
 // Edit this file to change promotions, feeds and optional public JSON endpoints.
 window.VINO_CONFIG = {
   marketMode: 'widget',
-  fifaYoutubeVideoId: '', // Only an official FIFA video that permits embedding. No guaranteed 24/7 FIFA channel.
+  channelCount: 1, // Set 2 for side-by-side streams. RTHK currently returns 403 from our test connection.
+  channels: [
+    {name:'CNA',url:'https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8'},
+    {name:'RTHK 32',url:'https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8'}
+  ],
+  fifaYoutubeVideoId: '',  // Only an official FIFA video that permits embedding. No guaranteed 24/7 FIFA channel.
   timezone: 'Asia/Hong_Kong', rotationSeconds: 18, refreshMinutes: 10,
   promotions: [
     {tag:'THE REFUEL RITUAL',title:'Strong coffee.\nStronger you.',text:'Protein coffee, crafted for your post-workout moment.',cta:'DISCOVER AT RECEPTION',image:'assets/protein-coffee.png'},

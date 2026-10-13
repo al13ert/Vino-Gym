@@ -1,68 +1,48 @@
-# VINO Gym TV — version 2: video and market widgets
+# VINO TV — unattended playback, version 3
 
-## Update your existing GitHub site
+## Update GitHub
 
-1. Unzip `vino-gym-tv-live-v2.zip` on your computer.
-2. Open https://github.com/al13ert/Vino-Gym and choose **Add file → Upload files**.
-3. Upload ALL the unzipped contents directly to the repository root, replacing the files with matching names. Include the new `live.js` file and `assets` folder. Do not upload the ZIP itself or a containing folder.
-4. Commit changes. Wait for the Pages deployment to finish.
-5. Open https://al13ert.github.io/Vino-Gym/?v=2 and refresh. On a computer press Command+0 to reset browser zoom, then Command+Shift+R to force reload. The page also uses versioned CSS/JS links to reduce stale-cache problems.
-6. On the TV use the same full address and the bottom-right fullscreen control. If its browser does not support fullscreen, use the browser menu. A modern HDMI browser is an alternative if the TV's browser cannot play third-party video.
+Unzip `vino-gym-tv-auto-v3.zip`. In https://github.com/al13ert/Vino-Gym choose Add file → Upload files and upload all contents directly to the root, replacing matching filenames. Include `auto-tv.js`, `assets/hls.min.js` and all other assets. Commit and wait for deployment, then open https://al13ert.github.io/Vino-Gym/?v=3 . On a Mac reset zoom with Command+0 and refresh with Command+Shift+R. No deletion of the repository is needed. This package has not been uploaded on your behalf.
 
-The website link remains the same. This ZIP has not been uploaded to GitHub on your behalf.
+## No channel selection required
 
-## Full-page fix
+Default: the direct stream labeled CNA in your supplied code starts automatically in the large video panel. News headlines, market widgets and rotating VINO promotions remain alongside it. No channel tabs or video controls need selecting. Playback is muted to support browser autoplay. Fullscreen is still a browser/TV setting; websites cannot force fullscreen without a user gesture. Set fullscreen once through the TV/browser menu. A browser that blocks even muted autoplay needs its autoplay permission configured once.
 
-The previous layout translated a fixed 1920×1080 panel by half its original size before scaling, which could move its edges outside the browser on smaller windows. Version 2 positions the scaled panel with explicit top/left coordinates and scales from its top-left corner. It fits inside the available browser area without cutting off the header or left edge. Letterboxing is intentional when the window is not 16:9. Browser fullscreen removes browser bars; it does not bypass playback restrictions.
+The video automatically retries failures with increasing delays up to 60 seconds, detects a stream that stops advancing, and reconnects after network restoration. Connection, buffering and failure messages appear instead of claiming successful playback. PLAYING means the browser reports playback, not independently verified event freshness.
 
-## Live news video
+## One or two simultaneous channels
 
-Use the top buttons to choose CNA NEWS, DW NEWS, FIFA FOOTBALL or VINO PROMOS. News stays selected until you change it; promotions rotate only within their own tab. Switching tabs stops the previous player.
+In `config.js`, change `channelCount: 1` to `channelCount: 2` BEFORE uploading for a side-by-side display. The first two entries in `channels` are used. Default sources copied from your attachment:
 
-- CNA official live news page: https://www.channelnewsasia.com/watch
-- CNA embed-view page used in the dashboard: https://www.channelnewsasia.com/watch/live-tv-1441426?view=embed
-- DW official live channel: https://www.youtube.com/@dwnews/live
-- DW channel-based YouTube embed: https://www.youtube.com/embed/live_stream?channel=UCknLrEdhRCp1aegoMqRaCZg&autoplay=1&mute=1
+1. CNA-labeled stream: `https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8`
+2. RTHK 32: `https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8`
 
-The dashboard attempts official embeds, not downloaded/rebroadcast video files. CNA may require pressing Play; DW requests muted autoplay. Unmute using the player's controls. Ads, cookie consent, player/browser restrictions, regional restrictions and changing broadcast URLs can affect playback. Channel-based YouTube embeds may be unavailable even when the channel has a livestream. The **Open official player** link is always available because cross-origin playback failures cannot reliably be detected by this page. End-to-end video playback on your TV has not been verified.
+During checks on 13 October 2026 the CNA-labeled playlist returned HTTP 200, a valid HLS playlist and a browser cross-origin header. RTHK returned HTTP 403 from the test connection. Therefore only the CNA-labeled stream is enabled by default. A playlist response alone does not prove full video playback, channel identity, freshness or viewing permission. Neither end-to-end live playback nor physical Skyworth playback has been verified. Addresses may expire/change; regional or publisher restrictions can apply. No restrictions are bypassed. Official CNA viewing page: https://www.channelnewsasia.com/watch . The source name is inherited from your supplied code.
 
-BBC/SCMP/BBC Asia headline feeds remain separate from video. They attempt rss2json first, then AllOrigins, with timeouts and labeled cached/offline fallback. Public RSS proxies have no uptime guarantee. Headlines are not television broadcasts.
+For a second channel replace its `name` and `url` with a working authorized HTTPS HLS stream. HLS manifests AND their segments/keys must allow browser cross-origin access unless native playback handles them. No always-on FIFA broadcast has been verified or connected. Do not label replays as live. If you want FIFA matches as the second channel, a working authorized event source with the necessary viewing permission is still needed.
 
-## FIFA football — what is connected
+## Actual market data rather than disguised sample figures
 
-The official FIFA+ service offers live football, archives and films: https://www.plus.fifa.com/
+Hang Seng (`HSI:HSI`), QQQ (`NASDAQ:QQQ`) and VOO (`AMEX:VOO`) use TradingView provider widgets. Demo prices from the pasted code are not used. Provider data can be delayed, end-of-day, unsupported or unavailable; widgets do not guarantee exchange-real-time prices. A personal paid subscription does not automatically upgrade public widget data. Confirm symbol status in the provider display. The original pasted code used hardcoded fallback stock prices and fixed FX figures without a demo label; those are deliberately excluded.
 
-No verified always-on FIFA TV stream or embeddable live match has been connected. Selecting FIFA FOOTBALL shows an honest availability message and a button to open FIFA+ in a separate tab. A FIFA+ page may require sign-in, and live events and rights vary by territory. This does not supply live Premier League or F1 broadcasts.
+Guaranteed real-time commercial display requires a licensed feed/server integration. Do not place private API keys in GitHub. Documentation: https://www.tradingview.com/widget-docs/faq/data/ . Attribution is retained. Widget failure never substitutes fictional prices.
 
-If FIFA publishes an official live YouTube video which permits embedding and is available in your territory, put its 11-character video ID into `fifaYoutubeVideoId` in `config.js`. The football tab then uses the YouTube player. The setting can also play an official replay, so do not call it live unless you have checked the event's status. When an event ends or is blocked, clear the setting or replace it with another verified authorized event. Do not use copied tokenized stream URLs or attempt to bypass restrictions. For public gym viewing, confirm the broadcaster's applicable public/commercial screening permission.
+## Branding and content
 
-## Actual market provider widgets
+Actual VINO artwork and concrete texture were extracted from page 1 of your PDF-compatible AI document. Approximate screen palette: #D6D6D6 grey, #202020 black, #A80030 red. Promotions rotate automatically every 18 seconds. Change their copy/images and the ticker in `config.js`; confirm offers before displaying to customers.
 
-Demo figures have been removed from the displayed page. The official TradingView Tickers widget requests:
+Coffee asset: generated with the built-in image tool using the supplied logo reference. Brief: photorealistic adult barista pouring milk into protein coffee in a white VINO-branded cup; black apron, grey concrete cafe, espresso machine, natural lighting, wide framing and dark copy space; no prices or nutrition claims. Cup branding is a generated approximation; header uses extracted artwork.
 
-- `HSI:HSI` — Hang Seng Index
-- `NASDAQ:QQQ` — Invesco QQQ
-- `AMEX:VOO` — Vanguard S&P 500 ETF
+RSS: BBC World, SCMP and BBC Asia; rss2json then AllOrigins proxies, labeled cached/offline fallback, publication times shown. These are best-effort external services, not guaranteed live television. No full articles are copied. Confirm source/public-screening permissions for commercial gym display.
 
-These are provider-fed widgets, NOT a promise of exchange-real-time quotes. TradingView's available data can be real-time, delayed or end-of-day depending on symbol/exchange and display permissions. A symbol may be unavailable in widgets even if it appears on TradingView's main website. Read the provider's displayed data status. Unsupported/blocked/offline widgets do not fall back to invented prices. If the area is blank or displays an unavailable symbol, use the TradingView link to check it. Widget attribution remains visible.
+## Bundled player
 
-Official documentation:
-- https://www.tradingview.com/widget-docs/getting-started/
-- https://www.tradingview.com/widget-docs/faq/data/
-- https://www.tradingview.com/widget-docs/widgets/tickers/tickers/
-
-For guaranteed real-time Hang Seng/US ETF data on a public gym display, arrange a licensed commercial display feed and a server-side integration. A personal TradingView subscription does not automatically upgrade a public widget. Do not put secret keys in GitHub files. The legacy API/demo helper functions are retained in `app.js`, but version 2's widget mode bypasses them and shows no demo sports or price numbers.
-
-## Promotions and branding
-
-Edit promotion copy, images, rotation speed and ticker in `config.js`. The supplied PDF-compatible AI file's first page provided the actual VINO logo artwork and concrete texture. Approximate screen colors: #D6D6D6 grey, #202020 black and #A80030 red. Frame uses extracted texture rather than a guessed flat background.
-
-The coffee photograph was created with the built-in image-generation tool from this brief: adult professional barista pouring milk into protein coffee in a white cup with the supplied angular black/red VINO branding; concrete cafe, black apron, espresso machine, natural lighting, wide framing with dark copy space on left, no prices or nutrition claims. The cup logo is a generated approximation; the header uses the extracted artwork. Promotions are concepts; confirm offers and availability before showing customers.
-
-## First-time deployment
-
-Create a public GitHub repository; upload the unzipped contents with `index.html` at root; then set **Settings → Pages → Deploy from a branch → main → /(root) → Save**. The actual URL exists only after GitHub deploys it. Official guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+`assets/hls.min.js` is hls.js 1.6.13, used where native HLS is unavailable. Download source: https://cdn.jsdelivr.net/npm/hls.js@1.6.13/dist/hls.min.js . Project/license: https://github.com/video-dev/hls.js/tree/v1.6.13 (Apache-2.0). Library notices are retained in the minified file. Native HLS is preferred when supported. No remote fonts or playback-library CDN call is required at runtime.
 
 ## Verification
 
-JavaScript syntax checked. Local browser checks cover screen bounds at 1920×1080, 1280×720, 1530×850 and 1000×900, player selection, FIFA availability fallback and promotion switching. External video playback, widget quote latency/availability and the physical Skyworth TV require testing on the deployed site; they are not guaranteed by these checks.
+Local Chrome: one-channel and two-channel creation, no channel selectors, no JavaScript errors, viewport containment at a non-16:9 size. Source syntax checked. Stream HTTP/manifest checks described above are separate from full video playback. End-to-end media playback, market-widget availability/latency and physical TV behavior remain unverified. Older `live.js` remains in the folder for compatibility but is not loaded by version 3.
+
+## First deployment
+
+Upload unzipped contents with `index.html` at repository root, then Settings → Pages → Deploy from a branch → main → /(root) → Save. GitHub provides the URL after deployment. Official guide: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
