@@ -1,31 +1,24 @@
-# VINO — continuous sports update
+# VINO — YouTube video update
 
-This is the complete website package with the continuous sports configuration included. It replaces the CNA stream with Red Bull TV's continuous broadcaster-scheduled sports channel. It does not use a YouTube replay playlist.
+This is the complete website package with the two supplied YouTube videos set to play in the main TV panel. It can use either the current video ID list or a YouTube playlist for simpler future updates.
 
 ## Install
 
-1. Unzip `vino-gym-tv-promotions-v11.zip`.
+1. Unzip `vino-gym-tv-youtube-playlist-v13.zip`.
 2. Open https://github.com/al13ert/Vino-Gym and choose Add file → Upload files.
 3. Upload ALL the unzipped contents directly to the repository root, including `assets`, `data`, `scripts` and the hidden `.github/workflows` folder. Replace matching files. The `.github` folder is hidden: on a Mac press Command+Shift+. in the file picker to show it. If uploading via GitHub’s browser page, first unzip the package, then upload the files and folders from inside it directly to the repository root. Make sure `.github/workflows/refresh-market-weather.yml` is included; without it, the automatic market and weather updates will not run. Do not upload the ZIP or the containing folder.
 4. Commit changes and wait for GitHub Pages deployment.
-5. Open your TV link: https://al13ert.github.io/Vino-Gym/?v=11 .
+5. Open your TV link: https://al13ert.github.io/Vino-Gym/?v=13 .
 
-Your normal TV address remains https://al13ert.github.io/Vino-Gym/ . The v=11 address helps distinguish this update. The package is not yet on GitHub. The website URL will continue showing the currently committed version until these files are uploaded and committed.
+Your normal TV address remains https://al13ert.github.io/Vino-Gym/ . The v=13 address helps distinguish this update. The package is not yet on GitHub. The website URL will continue showing the currently committed version until these files are uploaded and committed.
 
-No channel selection is needed. The existing automatic HLS player starts muted, follows the channel schedule and retries dropped connections. VINO branding, promotions, clock, news and market settings are preserved from the deployed configuration retrieved on 13 October 2026. The package must be committed to GitHub before its changes appear on the published site.
+The main player is set to the two YouTube videos currently supplied, in order, and requests muted autoplay and repeat playback. Some videos may refuse embedding or autoplay because of their YouTube settings, age or regional restrictions, or TV-browser behavior.
 
-## Channel
+To change clips manually, update the `youtubeVideoIds` list in `config.js` and upload/commit the updated file. For no-code updates directly on YouTube, put your chosen videos in a YouTube playlist and send me its link; I can connect its playlist ID in `youtubePlaylistId` once. After that, manage the playlist on YouTube and refresh the TV page if it has not picked up changes. The package is not yet on GitHub; GitHub Pages only shows updates after files are uploaded and committed.
 
-Red Bull TV's official site lists a 24/7 stream: https://www.redbull.tv/en . Its schedule includes action sports and sports programming; it is not a guarantee of football, Premier League, F1 or live events at every moment. A continuous channel may broadcast recorded material.
+## YouTube videos
 
-Connected public CDN endpoint:
-https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8
-
-The master playlist returned HTTP 200 and adaptive video variants from 180p through 1080p during checks. This is a publicly listed CDN address, not a broadcaster-issued embedding licence or uptime guarantee. It can change or be region-restricted. No tokens, logins or restrictions are bypassed. Confirm the broadcaster's applicable public/commercial viewing permission for your gym. Hong Kong TV playback still needs checking locally.
-
-Provider market widgets remain subject to their existing exchange delays and availability; this update does not change them into guaranteed real-time prices.
-
-Browser verification: the deployed dashboard was opened with a local configuration override, without modifying GitHub. Red Bull TV video advanced beyond 3 seconds with muted playback and no JavaScript errors. This short test does not guarantee long-term availability or physical Hong Kong TV behavior.
+The player reads `youtubeVideoIds` from `config.js` when `youtubePlaylistId` is blank. The supplied video IDs are `OJ53aG34CTs` and `PMDQ82w1pAE`. To make future changes directly on YouTube without uploading new website files, create a public or unlisted playlist and connect its playlist ID in `youtubePlaylistId`. Its videos must allow embedding.
 
 ## Hong Kong market watch and weather
 
@@ -39,7 +32,7 @@ After upload, allow the first **Refresh Hong Kong market and weather data** work
 
 ## Larger market display
 
-The market panel now uses a taller area and larger type for the 50-stock scrolling banner. The sports stream remains above it; the VINO promotions, news, Hong Kong clock and continuous Red Bull TV channel remain part of the complete site.
+The market panel now uses a taller area and larger type for the 50-stock scrolling banner. The YouTube video player remains above it; the VINO promotions, news and Hong Kong clock remain part of the complete site.
 
 ## VINO promotions
 

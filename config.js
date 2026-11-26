@@ -1,12 +1,8 @@
 // Edit this file to change promotions, feeds and optional public JSON endpoints.
 window.VINO_CONFIG = {
   marketMode: 'widget',
-  channelCount: 1, // One continuous sports channel; no channel selection required.
-  channels: [
-    {name:'RED BULL TV · CONTINUOUS SPORTS',url:'https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8'},
-    {name:'RTHK 32',url:'https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8'}
-  ],
-  fifaYoutubeVideoId: '',  // Only an official FIFA video that permits embedding. No guaranteed 24/7 FIFA channel.
+  youtubePlaylistId: '', // Optional: set a playlist ID here for no-code playlist updates on YouTube.
+  youtubeVideoIds: ['OJ53aG34CTs', 'PMDQ82w1pAE'], // Used in this order when no playlist ID is set.
   timezone: 'Asia/Hong_Kong', rotationSeconds: 18, refreshMinutes: 10,
   promotions: [
     {tag:'THE REFUEL RITUAL',title:'Strong coffee.\nStronger you.',text:'Protein coffee, crafted for your post-workout moment.',cta:'DISCOVER AT RECEPTION',image:'assets/protein-coffee.png'},

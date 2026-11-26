@@ -10,3 +10,7 @@ html,body{width:100%;height:100%;overflow:hidden}#screen{left:0;top:0;transform-
 /* Local VINO Instagram poster assets sit fully in the promotion panel, preserving their bilingual artwork. */
 .hero.poster-slide{background-repeat:no-repeat;background-color:#202020}
 .hero.poster-slide .shade{background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.76) 55%,rgba(0,0,0,.12) 100%)}
+
+.auto-tv-box iframe{display:block;width:100%;height:100%;border:0;background:#000}.youtube-empty{width:100%;height:100%;display:grid;place-items:center;padding:50px;text-align:center;color:#fff;background:linear-gradient(135deg,#151515,#4b222c);font-size:30px;line-height:1.35}
+
+#vinoYoutubePlayer{width:100%;height:100%}
