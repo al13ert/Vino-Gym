@@ -4,13 +4,13 @@ This is the complete website package with the two supplied YouTube videos set to
 
 ## Install
 
-1. Unzip `vino-gym-tv-youtube-playlist-v13.zip`.
+1. Unzip `vino-gym-tv-youtube-playlist-v14.zip`.
 2. Open https://github.com/al13ert/Vino-Gym and choose Add file → Upload files.
 3. Upload ALL the unzipped contents directly to the repository root, including `assets`, `data`, `scripts` and the hidden `.github/workflows` folder. Replace matching files. The `.github` folder is hidden: on a Mac press Command+Shift+. in the file picker to show it. If uploading via GitHub’s browser page, first unzip the package, then upload the files and folders from inside it directly to the repository root. Make sure `.github/workflows/refresh-market-weather.yml` is included; without it, the automatic market and weather updates will not run. Do not upload the ZIP or the containing folder.
 4. Commit changes and wait for GitHub Pages deployment.
-5. Open your TV link: https://al13ert.github.io/Vino-Gym/?v=13 .
+5. Open your TV link: https://al13ert.github.io/Vino-Gym/?v=14 .
 
-Your normal TV address remains https://al13ert.github.io/Vino-Gym/ . The v=13 address helps distinguish this update. The package is not yet on GitHub. The website URL will continue showing the currently committed version until these files are uploaded and committed.
+Your normal TV address remains https://al13ert.github.io/Vino-Gym/ . The v=14 address helps distinguish this update. The package is not yet on GitHub. The website URL will continue showing the currently committed version until these files are uploaded and committed.
 
 The main player is set to the two YouTube videos currently supplied, in order, and requests muted autoplay and repeat playback. Some videos may refuse embedding or autoplay because of their YouTube settings, age or regional restrictions, or TV-browser behavior.
 
@@ -26,7 +26,7 @@ Market Watch now removes QQQ/VOO and shows a large scrolling list of the 50 HKEX
 
 The quote source supplies reported turnover, price and daily percent change. The banner scrolls through all 50 codes, company names, HKD prices and changes. Data is provider supplied and may be delayed or unavailable. It is an informational display, not an exchange-certified real-time feed. The list reflects the provider's turnover ranking at the last successful refresh, not the day's final ranking until markets close.
 
-The header displays the Hong Kong Observatory's latest main-station temperature, local forecast and observation time. The same GitHub refresh job updates this snapshot every 15 minutes. Weather is current HKO data when shown, not a forecast of the whole day. Source: https://data.weather.gov.hk/weatherAPI/opendata/weather.php ; official API guide: https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf . If Actions have not run, the market panel shows a pending state; HKO updates are published with the same snapshot.
+The header fetches current temperature directly from the Hong Kong Observatory Open Data API in the TV browser and refreshes every five minutes. It uses the latest King's Park reading (or the Observatory station if unavailable) and displays the HKO update time. It falls back to the saved reading only if HKO cannot be reached, and labels that reading as saved. Source: https://data.weather.gov.hk/weatherAPI/opendata/weather.php ; official API guide: https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf . The live weather display does not depend on GitHub Actions; the scheduled refresh is still used for the stock data.
 
 After upload, allow the first **Refresh Hong Kong market and weather data** workflow run to finish in GitHub → Actions. The dashboard will show its first values once `data/market-weather.json` is committed. To update manually later: Actions → Refresh Hong Kong market and weather data → Run workflow.
 
